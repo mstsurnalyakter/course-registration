@@ -61,7 +61,7 @@ const Course = ({course}) => {
             </p>
           </div>
           <div className="card-actions">
-            <button className="btn btn-primary w-full">Select</button>
+            <button className="btn btn-info text-white w-full">Select</button>
           </div>
         </div>
       </div>
