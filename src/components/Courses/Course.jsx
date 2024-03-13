@@ -1,16 +1,9 @@
 // import React from 'react'
 import PropTypes from 'prop-types'
 
-const Course = ({course}) => {
-    const {
-        id,
-        name,
-        description,
-        photo,
-        price,
-        credit
-    } = course;
-    console.log(course);
+const Course = ({ course, handleCourseSelect }) => {
+  const { id, name, description, photo, price, credit } = course;
+  // console.log(course);
   return (
     <div className="">
       <div className="card bg-base-100 shadow-xl space-y-4">
@@ -61,16 +54,22 @@ const Course = ({course}) => {
             </p>
           </div>
           <div className="card-actions">
-            <button className="btn btn-info text-white w-full">Select</button>
+            <button
+              onClick={() => handleCourseSelect(course)}
+              className="btn btn-info text-white w-full"
+            >
+              Select
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 Course.propTypes = {
-    course:PropTypes.object.isRequired
-}
+  course: PropTypes.object.isRequired,
+  handleCourseSelect: PropTypes.func.isRequired,
+};
 
 export default Course
